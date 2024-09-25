@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %}Название страницы{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <!--        Выбор кода и тд. Первая строка-->
+    <div class="row">
+        <div class = col>
+            <div class="mb-3">
+                <!-- <label for="LabelForInput" class="form-label">Label your input</label> -->
+                <input type="text" class="form-control form-control-lg" id="LabelForInput" placeholder="Your text is called...">
+            </div>
+        </div>
+        <div class="col" aria-label="Programming Language Selector">
+            <div class="mb-3" >
+                <!-- <label for="ProgrammingLanguageSelector" class="form-label">Choose programming language</label> -->
+                <select class="form-select form-select-lg" id="ProgrammingLanguageSelector">
+<!--                    disabled-->
+                    <option value=""  selected hidden>Выберите язык программирования</option>
+                    <option value="0">Определить автоматически</option>
+                    <option value="1">C++</option>
+                    <option value="2">Python</option>
+                    <option value="3">JavaScript</option>
+                </select>
+            </div>
+        </div>
+
+    </div>
+
+    <!--    Текстоввод    -->
+    <!-- <div> -->
+        <!-- можно добавить строку слева -->
+        <!-- <span class="input-group-text">With textarea</span> -->
+        <textarea class="input-code-area"></textarea>
+    <!-- </div> -->
+
+    <!--        Кнопочка отправить-->
+    <div class="row">
+        <div class="col">
+            <div class="spacer"></div>
+        </div>
+        <div  class="col">
+            <button id="send_code_to_server_button" class="btn1">Загрузить</button>
+            <script src="{{ url_for('static', filename='btn-1.js') }}"></script>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">Содержимое колонки 1</div>
+    <div class="col-md-6">Содержимое колонки 2</div>
+</div>
+
+</div>
+{% endblock %}
